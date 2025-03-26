@@ -1,0 +1,392 @@
+/* Base styles */
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  position: relative;
+  overflow-x: hidden;
+  color: white;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* Typography */
+.container h1 {
+  font-size: 3.5rem;
+  color: #ffd700; /* Gold for pocket watch */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  margin-bottom: 10px;
+  font-family: "Playfair Display", serif;
+  letter-spacing: 1px;
+}
+
+.container h2 {
+  font-size: 1.5rem;
+  color: #f8f9fa;
+  margin-bottom: 20px;
+}
+
+/* Wonderland decorative elements */
+.wonderlandElements {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.teacup {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border: 3px solid #8b4513; /* Brown for tea */
+  border-radius: 0 0 40px 40px;
+  bottom: 10%;
+  left: 5%;
+  opacity: 0.6;
+  animation: float 6s ease-in-out infinite;
+}
+
+.teacup:before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: 3px solid #8b4513;
+  border-radius: 50%;
+  right: -20px;
+  top: 20px;
+}
+
+.pocketWatch {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #ffd700;
+  top: 15%;
+  right: 10%;
+  opacity: 0.7;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  animation: float 6s ease-in-out infinite 1s;
+}
+
+.pocketWatch:before {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 20px;
+  background: #ffd700;
+  top: -15px;
+  left: 27px;
+}
+
+.mushroom {
+  position: absolute;
+  width: 70px;
+  height: 40px;
+  background: #ff6347;
+  border-radius: 50%;
+  bottom: 20%;
+  right: 15%;
+  opacity: 0.7;
+  animation: float 6s ease-in-out infinite 2s;
+}
+
+.mushroom:before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 40px;
+  background: #f5f5f5;
+  bottom: -35px;
+  left: 25px;
+  border-radius: 10px;
+}
+
+.playingCard {
+  position: absolute;
+  width: 50px;
+  height: 70px;
+  background: white;
+  border-radius: 5px;
+  top: 30%;
+  left: 8%;
+  transform: rotate(-15deg);
+  opacity: 0.7;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  animation: float 6s ease-in-out infinite 3s;
+}
+
+.playingCard:before {
+  content: "♥";
+  position: absolute;
+  color: #ff6b6b;
+  font-size: 20px;
+  top: 5px;
+  left: 5px;
+}
+
+/* Layout components */
+.header,
+.donationSection,
+.footer {
+  background: rgba(25, 25, 112, 0.8); /* Midnight blue with transparency */
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Form styles */
+.form {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.formGroup {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #f8f9fa;
+}
+
+.formGroup input,
+.formGroup select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  font-family: "Alice", serif;
+  color: #333; /* Dark text color for the select itself */
+}
+
+.formGroup select option {
+  color: #333; /* Dark gray text color */
+  background-color: white;
+}
+
+/* Stripe Elements styling */
+.formGroup #card-element {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.errorMessage {
+  color: #ff6b6b;
+  font-size: 0.9rem;
+  margin-top: 5px;
+  min-height: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+.paymentMessage {
+  color: #ffd700;
+  font-size: 1.1rem;
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.spinner {
+  color: #ffffff;
+  font-size: 22px;
+  text-indent: -99999px;
+  margin: 0px auto;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  box-shadow: inset 0 0 0 2px;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.spinner:before,
+.spinner:after {
+  position: absolute;
+  content: "";
+}
+
+.spinner:before {
+  width: 10.4px;
+  height: 20.4px;
+  background: #6a0dad;
+  border-radius: 20.4px 0 0 20.4px;
+  top: -0.2px;
+  left: -0.2px;
+  -webkit-transform-origin: 10.4px 10.2px;
+  transform-origin: 10.4px 10.2px;
+  -webkit-animation: loading 2s infinite ease 1.5s;
+  animation: loading 2s infinite ease 1.5s;
+}
+
+.spinner:after {
+  width: 10.4px;
+  height: 10.2px;
+  background: #6a0dad;
+  border-radius: 0 10.2px 10.2px 0;
+  top: -0.1px;
+  left: 10.2px;
+  -webkit-transform-origin: 0px 10.2px;
+  transform-origin: 0px 10.2px;
+  -webkit-animation: loading 2s infinite ease;
+  animation: loading 2s infinite ease;
+}
+
+.buttonGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.btn {
+  background: #e83e8c; /* Pink for flamingo */
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  font-family: "Alice", serif;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover {
+  background: #c71585; /* Deeper pink */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+.primaryBtn {
+  background-color: #6a0dad; /* Purple for Cheshire Cat */
+  color: white;
+}
+
+.primaryBtn:hover {
+  background-color: #8a2be2;
+}
+
+/* Footer */
+.footer {
+  margin-top: auto;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Responsive design */
+@media (min-width: 768px) {
+  .container {
+    padding: 30px;
+  }
+
+  .buttonGroup {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .main {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  /* Adjust decorative elements for larger screens */
+  .teacup {
+    width: 100px;
+    height: 100px;
+    left: 10%;
+  }
+
+  .pocketWatch {
+    width: 80px;
+    height: 80px;
+    right: 15%;
+  }
+}
+
+/* Animation for wonderland elements */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Additional styles for floating elements */
+.floatingElement {
+  position: fixed;
+  z-index: -1;
+  pointer-events: none;
+  animation: floatAcross 25s linear forwards;
+  color: rgba(255, 255, 255, 0.7);
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes floatAcross {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.7;
+  }
+  90% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes loading {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
